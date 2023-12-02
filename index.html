@@ -65,6 +65,21 @@
             <input type="color" class="color-picker" id="font-color-picker" onchange="changeFontColor(this.value)">
             <img src="font-color-icon-6.jpg" width="13" height="13">
           </label>
+          <button type="button" class="custom-button" onclick="alignText('left')">
+            <img src="left.png" width="10" height="10" >
+          </button>
+  
+          <button type="button" class="custom-button" onclick="alignText('center')">
+            <img src="center.png" width="10" height="10" >
+          </button>
+  
+          <button type="button" class="custom-button" onclick="alignText('right')">
+            <img src="right.png" width="10" height="10" >
+          </button>
+  
+          <button type="button" class="custom-button" onclick="alignText('justify')">
+            <img src="justify.png" width="10" height="10" >
+          </button>
 
       </div>
     </center>
@@ -91,6 +106,20 @@
     document.execCommand('foreColor', false, selectedColor);
     saveState(); 
     }
+    //this function for alignments
+    function alignText(align) {
+    const validAlignments = ['left', 'center', 'right', 'justify'];
+
+    if (validAlignments.includes(align)) {
+        const editor = document.getElementById('editor');
+
+        editor.style.textAlign = align;
+
+        saveState(); 
+    } else {
+        console.error('Invalid alignment value provided.');
+  }
+}
     
 
 </script>
