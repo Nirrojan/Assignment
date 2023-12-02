@@ -61,6 +61,10 @@
           <button type="button" class="custom-button" onclick="cmd('italic')">
             <i><img src="italic-xxl.png" width="10" height="10" ></i>
           </button>
+          <label for="font-color-picker" class="color-picker-label">
+            <input type="color" class="color-picker" id="font-color-picker" onchange="changeFontColor(this.value)">
+            <img src="font-color-icon-6.jpg" width="13" height="13">
+          </label>
 
       </div>
     </center>
@@ -83,6 +87,10 @@
         saveState();
     }
   
+    function changeFontColor(selectedColor) {
+    document.execCommand('foreColor', false, selectedColor);
+    saveState(); 
+    }
     
 
 </script>
